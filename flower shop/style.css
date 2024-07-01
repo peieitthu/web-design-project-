@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+
+/* global color */
+
+:root {
+    --text-color: #020307;
+    --main-color: #020307;
+    --bg-color: #fff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    width: 100%;
+    /* position: fixed;
+    width: 100%;
+    z-index:10;
+    top: 0; */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 50px;
+    transition: 0.5s;
+    background-color: var(--bg-color);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo .bx {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 0px 20px;
+    /* display: flex;
+    align-items: flex-start; */
+}
+
+.logo h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.logo small {
+    font-size: 0.8rem;
+    padding-left: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--text-color);
+    /* font-weight: 100; */
+}
+
+.logo i {
+    margin-right: 5px;
+    padding: 0px 10px;
+}
+
+.navbar {
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    column-gap: 4rem;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.navbar a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s;
+}
+
+.navbar .active::after {
+    content: "";
+    width: 60%;
+    height: 2px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s;
+}
+
+.navbar a:hover::after {
+    width: 60%;
+}
+
+header .navlogo {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navlogo .bx {
+    font-size: 1.5rem;
+    padding: 0px 12px;
+}
+
+
+/* header colse */
+
+
+/* home cover section */
+
+.container {
+    width: 100%;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container img {
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.7;
+}
+
+.home-text {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+}
+
+.home-text span {
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.home-text h1 {
+    color: var(--text-color);
+    font-size: 4rem;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.btn {
+    background-color: var(--main-color);
+    padding: 0.7rem 1.4rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.btn:hover {
+    background-color: #020307;
+    opacity: 0.7;
+}
+
+
+/* flower collection start */
+
+.flower-collection1 {
+    max-width: 960px;
+    margin: 0px auto 0px auto;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-columns: repeat(autofit, minmax(600px, auto));
+    gap: 1rem;
+    /* margin-top: 2rem; */
+}
+
+.flower-collection2 {
+    max-width: 960px;
+    margin: 0px auto 0px auto;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-columns: repeat(autofit, minmax(180px, auto));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.box .box-img {
+    width: 100%;
+    height: 270px;
+    display: flex;
+    align-items: right;
+    position: relative;
+}
+
+.box .box-img img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.lavender {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+}
+
+.rose {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+}
+
+.daisy {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+small {
+    font-weight: 900;
+}
+
+p {
+    font-weight: lighter;
+    opacity: 0.7;
+}
+
+a {
+    color: var(--text-color);
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+
+/* flower collection end */
+
+
+/* footer */
+
+footer {
+    padding: 20px 0px;
+    text-align: center;
+}
+
+
+/* footer end */
+
+@media(max-width:1080px) {
+    .flower-collection1 .flower-collection2 {
+        padding: 0px auto;
+    }
+}
+
+@media(max-width:991px) {
+    .home-text h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    a {
+        font-size: 1rem;
+    }
+    .home-text {
+        padding: 0 4%;
+    }
+    section {
+        padding: 0px 0px;
+    }
+    .flower-collection1 {
+        padding: 0px 40px;
+    }
+    .flower-collection2 {
+        padding: 0px 40px;
+    }
+    .btn {
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+@media(max-width:870px) {
+    .navbar {
+        display: none;
+    }
+    .flower-collection1 {
+        padding: 0px 30px;
+    }
+    .flower-collection2 {
+        padding: 0px 30px;
+    }
+}
+
+@media(max-width:700px) {
+    .navbar {
+        display: none;
+    }
+    .flower-collection1 {
+        grid-template-columns: auto;
+    }
+    .flower-collection2 {
+        grid-template-columns: auto;
+    }
+}
+
+@media(max-width:470px) {
+    .home-text h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    a {
+        font-size: 0.8rem;
+    }
+    .home-text {
+        padding: 0 4%;
+    }
+    section {
+        padding: 0px 0px;
+    }
+    .flower-collection1 {
+        padding: 0px 10px;
+    }
+    .flower-collection2 {
+        padding: 0px 10px;
+    }
+    .btn {
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+@media(max-width:300px) {
+    .home-text h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    a {
+        font-size: 0.6rem;
+    }
+    .home-text {
+        padding: 0 3%;
+    }
+    section {
+        padding: 0px 0px;
+    }
+    .flower-collection1 {
+        padding: 0px 5px;
+    }
+    .flower-collection2 {
+        padding: 0px 5px;
+    }
+    .btn {
+        padding: 0.4rem 0.7rem;
+    }
+}
